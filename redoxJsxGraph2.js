@@ -8,31 +8,31 @@
   function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 </script>
 
-<!--JSXGraph MathJax Specifications-->
-     <script>
-               window.MathJax = {
-               tex: {
-               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-               displayMath: [ ['<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>'</mo><mo>,</mo><mo>'</mo><annotation encoding="LaTeX">','</annotation></semantics></math>'], ["\\[","\\]"] ],
-               packages: ['base', 'ams'] },
-               options: {
-               ignoreHtmlClass: 'tex2jax_ignore',
-               processHtmlClass: 'tex2jax_process'
-               }
-               };
-     </script>
-
 
 <script type="text/javascript">
  var checkAnswer=[];
 </script>
   
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
-
- MathJax.Hub.Config({showMathMenu: false});
-MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)
-}
+MathJax.Hub.Config({
+    config: ["MMLorHTML.js", "Safe.js"],
+    jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
+    extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+    TeX: {
+        extensions: ["mhchem.js","color.js","AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+    },
+    menuSettings: {
+        zoom: "Double-Click",
+        mpContext: true,
+        mpMouse: true
+    },
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
 });
+
+MathJax.Hub.Config({showMathMenu: false});
+MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)}});
 JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
 JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
 let rqm={#rqm#};
