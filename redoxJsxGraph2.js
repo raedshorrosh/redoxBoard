@@ -33,8 +33,8 @@ MathJax.Hub.Config({
 
 MathJax.Hub.Config({showMathMenu: false});
 MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)}});
-JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
-JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
+JXG.Options.text.cssDefaultStyle += 'direction:ltr; font-family:Arial;';
+JXG.Options.text.highlightCssDefaultStyle += 'direction:ltr';
 let rqm={#rqm#};
 
 var board = JXG.JSXGraph.initBoard(divid, {
