@@ -1,6 +1,4 @@
-
-<!----------------------------------------------------------------------------------------------------------------------------------------->
-<script>
+<!--------------------------------------------------------------------------------------------------------------------------------><script>
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
   function igrt(x,y)  {return (x>y)};
@@ -10,13 +8,25 @@
   function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<!--JSXGraph MathJax Specifications-->
+     <script>
+               window.MathJax = {
+               tex: {
+               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+               displayMath: [ ['<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>'</mo><mo>,</mo><mo>'</mo><annotation encoding="LaTeX">','</annotation></semantics></math>'], ["\\[","\\]"] ],
+               packages: ['base', 'ams'] },
+               options: {
+               ignoreHtmlClass: 'tex2jax_ignore',
+               processHtmlClass: 'tex2jax_process'
+               }
+               };
+     </script>
+
 
 <script type="text/javascript">
  var checkAnswer=[];
 </script>
-
+  
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
 
  MathJax.Hub.Config({showMathMenu: false});
@@ -42,9 +52,7 @@ var board = JXG.JSXGraph.initBoard(divid, {
 
 var text_top = 2,
   radius = {#radius#},
-  fontsize ={#fontsize#},
-   minOx={#minOx#},
-    maxOx={#maxOx#};
+  fontsize ={#fontsize#};
 var radd = {#spaces#};
 var maxatoms = {#maxat#};
 var eqn = {#eq#};
@@ -546,40 +554,24 @@ if (!st){
   }
 }
 });
-function createSelectDropdown() {
-      let selectTag = {#ox_no_txt#}+': '+ '<select id="nameinput" style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
-      for (let i = minOx; i < maxOx; i++) {
-			const sign = Math.sign(i) === 1 ? '+' : '';
-        
-			if (i!=0)
-			{selectTag += '<option value="' + sign + i + '">' + sign + i + '</option>';}
-			else 			{selectTag += '<option value=0 selected  >0</option>';}
 
-		
-      }
-      selectTag += '</select>';
-      return selectTag;
-    }
-  
-   const selectTag = createSelectDropdown();
-    const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
-    select.setAttribute({ visible: true });
-/*
 // input field for oxidation number
 var input = board.create('input', [-3, 4, '0', {#ox_no_txt#}], {
   cssStyle: 'width: 40px;',
   fontsize: fontsize
 });
-*/
+
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
     if (e.button == 0) {
       if (!answered) {
-       const dropdown = document.getElementById("nameinput");
-	     const selectedValue = dropdown.value;
-        oxid[i]=selectedValue;
-
+        let tmp = parseFloat(input.Value());
+        if (Math.sign(tmp) == 1) {
+          oxid[i] = '+' + tmp
+        } else {
+          oxid[i] = input.Value();
+        }
         if (stateInput.value == '') {
           stateInput.value = JSON.stringify(oxid)
         }
@@ -608,24 +600,24 @@ checkAnswer[rqm] =function() {
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
-  { red_txt='<span style="font-size: 1.0em;color:green">'+ {#red_txt#}+'<i class="fa fa-check"></i></span>';
+  { red_txt='</span><span style="font-size: 1em; color: green;">'+ {#red_txt#}+'<i class="fa fa-check"></i></span><span style="font-size: 1rem;">';
   }
    else 
-  { red_txt='<span style="font-size: 1.0em;color:red">'+ {#red_txt#}+'<i class="fa fa-times"></i></span>';
+  { red_txt='</span><span style="font-size: 1em; color: red;">'+ {#red_txt#}+'<i class="fa fa-times"></i></span><span style="font-size: 1rem;">';
   }
   
   if (iand((inter11.Y()!=0),(inter22.Y()!=0)))
-  { ox_txt='<span style="font-size: 1.0em;color:green">'+ {#ox_txt#}+'<i class="fa fa-check"></i></span>';
+  { ox_txt='</span><span style="font-size: 1em; color: green;">'+ {#ox_txt#}+'<i class="fa fa-check"></i></span><span style="font-size: 1rem;">';
   }
    else 
-  { ox_txt='<span style="font-size: 1.0em;color:red">'+ {#ox_txt#}+'<i class="fa fa-times"></i></span>';
+  { ox_txt='</span><span style="font-size: 1em; color: red;">'+ {#ox_txt#}+'<i class="fa fa-times"></i></span><span style="font-size: 1rem;">';
   }
   board.update();
   for (i = 0; isless(i,maxatoms); i++){
   if (parseFloat(p[i].name)==parseFloat(oxid_ans[i])) {
-  p[i].name='<span style="font-size: 1.0em;color:green">'+p[i].name+'<i class="fa fa-check"></i></span>';   board.update();}
+  p[i].name='</span><span style="font-size: 1em; color: green;">'+p[i].name+'<i class="fa fa-check"></i></span><span style="font-size: 1rem;">';   board.update();}
   else 
- { p[i].name='<span style="font-size: 1.0em;color:red">'+p[i].name+'<i class="fa fa-times"></i></span>';  board.update();
+ { p[i].name='</span><span style="font-size: 1em; color: red;">'+p[i].name+'<i class="fa fa-times"></i></span><span style="font-size: 1rem;">';  board.update();
  }
   
  }
@@ -702,8 +694,5 @@ if (design==1){
     var e = new Event('change');
     stateInput.dispatchEvent(e);
 }
-[[/jsxgraph]]<br></span></p><p></p>
+[[/jsxgraph]]
 <!-- end of graph code -->
-
-
-<p></p>
