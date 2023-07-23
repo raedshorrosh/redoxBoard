@@ -556,7 +556,7 @@ if (!st){
   }
 }
 });
-const idname:"nameinput"+ rqm.tostring();
+const idname="nameinput"+ rqm.tostring();
 function createSelectDropdown() {
 	
       let selectTag = {#ox_no_txt#}+': '+ '<select id='+idname+' style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
