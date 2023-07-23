@@ -52,7 +52,9 @@ var board = JXG.JSXGraph.initBoard(divid, {
 
 var text_top = 2,
   radius = {#radius#},
-  fontsize ={#fontsize#};
+  fontsize ={#fontsize#},
+  minOx={#minOx#},
+  maxOx={#maxOx#};
 var radd = {#spaces#};
 var maxatoms = {#maxat#};
 var eqn = {#eq#};
@@ -554,24 +556,35 @@ if (!st){
   }
 }
 });
+function createSelectDropdown() {
+      let selectTag = {#ox_no_txt#}+': '+ '<select id="nameinput" style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
+      for (let i = minOx; i < maxOx; i++) {
+			const sign = Math.sign(i) === 1 ? '+' : '';
+        
+			if (i!=0)
+			{selectTag += '<option value="' + sign + i + '">' + sign + i + '</option>';}
+			else 			{selectTag += '<option value=0 selected  >0</option>';}
 
-// input field for oxidation number
-var input = board.create('input', [-3, 4, '0', {#ox_no_txt#}], {
-  cssStyle: 'width: 40px;',
-  fontsize: fontsize
-});
+		
+      }
+      selectTag += '</select>';
+      return selectTag;
+    }
+  
+   const selectTag = createSelectDropdown();
+    const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
+    select.setAttribute({ visible: true });
+
 
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
     if (e.button == 0) {
       if (!answered) {
-        let tmp = parseFloat(input.Value());
-        if (Math.sign(tmp) == 1) {
-          oxid[i] = '+' + tmp
-        } else {
-          oxid[i] = input.Value();
-        }
+       const dropdown = document.getElementById("nameinput");
+	     const selectedValue = dropdown.value;
+        oxid[i]=selectedValue;
+
         if (stateInput.value == '') {
           stateInput.value = JSON.stringify(oxid)
         }
@@ -592,7 +605,6 @@ p.forEach(function(el, i, p) {
   });
 
 });
-
 
  //===================
 checkAnswer[rqm] =function() {
