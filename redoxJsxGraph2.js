@@ -556,7 +556,8 @@ if (!st){
   }
 }
 });
-const idname="nameinput"+ rqm.toString();
+var idname="nameinput"+ rqm.toString();
+console.log(idname);
 function createSelectDropdown() {
 	
       let selectTag = {#ox_no_txt#}+': '+ '<select id='+idname+' style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
@@ -574,10 +575,11 @@ function createSelectDropdown() {
     }
   
 const selectTag = createSelectDropdown();
+console.log(selectTag);
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 const dropdown = document.getElementById(idname);
-
+console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
