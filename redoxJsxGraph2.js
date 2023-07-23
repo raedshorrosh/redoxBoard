@@ -557,7 +557,7 @@ if (!st){
 }
 });
 function createSelectDropdown() {
-      let selectTag = {#ox_no_txt#}+': '+ '<select id="nameinput" style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
+      let selectTag = {#ox_no_txt#}+': '+ '<select id="nameinput"'+rqm+' style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
       for (let i = minOx-1; i < (maxOx+1); i++) {
 			const sign = Math.sign(i) === 1 ? '+' : '';
         
@@ -574,7 +574,7 @@ function createSelectDropdown() {
 const selectTag = createSelectDropdown();
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
-const dropdown = document.getElementById("nameinput");
+const dropdown = document.getElementById("nameinput"+rqm);
 
 //mouse button event
 p.forEach(function(el, i, p) {
