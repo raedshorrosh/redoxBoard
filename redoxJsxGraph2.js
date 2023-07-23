@@ -576,7 +576,7 @@ function createSelectDropdown() {
     console.log(i,' ',selectTag);
   
 select.setAttribute({ visible: true });
-
+ console.log(i,' ',selectTag);
 
 //mouse button event
 p.forEach(function(el, i, p) {
