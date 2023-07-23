@@ -571,19 +571,16 @@ function createSelectDropdown() {
       return selectTag;
     }
   
-   const selectTag = createSelectDropdown();
-    const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
-    console.log(i,' ',selectTag);
-  
+const selectTag = createSelectDropdown();
+const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
- console.log(i,' ',selectTag);
+const dropdown = document.getElementById("nameinput");
 
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
     if (e.button == 0) {
       if (!answered) {
-       const dropdown = document.getElementById("nameinput");
 	     const selectedValue = dropdown.value;
         oxid[i]=selectedValue;
 
