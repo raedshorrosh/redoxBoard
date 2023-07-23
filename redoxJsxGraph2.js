@@ -558,11 +558,11 @@ if (!st){
 });
 function createSelectDropdown() {
       let selectTag = {#ox_no_txt#}+': '+ '<select id="nameinput" style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
-      for (let i = minOx; i < maxOx; i++) {
-			const sign = Math.sign(i) === 1 ? '+' : '';
+      for (let j = minOx; j < maxOx+1; j++) {
+			const sign = Math.sign(j) === 1 ? '+' : '';
         
-			if (i!=0)
-			{selectTag += '<option value="' + sign + i + '">' + sign + i + '</option>';}
+			if (j!=0)
+			{selectTag += '<option value="' + sign + j + '">' + sign + j + '</option>';}
 			else 			{selectTag += '<option value=0 selected  >0</option>';}
 
 		
