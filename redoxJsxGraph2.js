@@ -565,8 +565,7 @@ function createSelectDropdown() {
 			{selectTag += '<option value="' + sign + i + '">' + sign + i + '</option>';}
 			else 			{selectTag += '<option value=0 selected  >0</option>';}
 
-      console.log(i,' ',selectTag);
-		
+	
       }
       selectTag += '</select>';
       return selectTag;
@@ -574,7 +573,9 @@ function createSelectDropdown() {
   
    const selectTag = createSelectDropdown();
     const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
-    select.setAttribute({ visible: true });
+    console.log(i,' ',selectTag);
+  
+select.setAttribute({ visible: true });
 
 
 //mouse button event
