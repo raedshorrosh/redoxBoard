@@ -580,7 +580,7 @@ select.setAttribute({ visible: true });
 
 var bbb=document.getElementById("nameinput");console.log(bbb);
 bbb.id="nameinput"+{#rqm#};
-const dropdown = document.getElementById(bbb);console.log(bbb);
+const dropdown = document.getElementById(bbb.id);console.log(bbb);
 console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
