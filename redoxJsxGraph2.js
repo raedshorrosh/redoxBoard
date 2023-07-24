@@ -578,8 +578,9 @@ console.log(selectTag);
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 
-var bbb=document.getElementById("nameinput");bbb.id="nameinput"+{#rqm#};
-const dropdown = document.getElementById(bbb);
+var bbb=document.getElementById("nameinput");console.log(bbb);
+bbb.id="nameinput"+{#rqm#};
+const dropdown = document.getElementById(bbb);console.log(bbb);
 console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
