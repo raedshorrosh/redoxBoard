@@ -25,7 +25,6 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-var select=[];
 </script>
   
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
@@ -576,8 +575,8 @@ function createSelectDropdown() {
   
 const selectTag = createSelectDropdown();
 console.log(selectTag);
-select[{#rqm#}] = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
-select[{#rqm#}].setAttribute({ visible: true });
+var select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
+select.setAttribute({ visible: true });
 board.update();
 const dropdown = document.getElementById("inp"+{#rqm#});
 console.log(dropdown);
