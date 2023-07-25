@@ -79,11 +79,11 @@ else {
     var oxid_ans = [];
 }
 
-var positionsut = document.getElementById(positionsRef);
-var stateut = document.getElementById(statesRef);
-var oxut= document.getElementById(oxmapsRef);
-var redut= document.getElementById(redmapsRef);
-if (design!=1) {positionsut.value=JSON.stringify(positions)};
+var positionsInput = document.getElementById(positionsRef);
+var stateInput = document.getElementById(statesRef);
+var oxInput= document.getElementById(oxmapsRef);
+var redInput= document.getElementById(redmapsRef);
+if (design!=1) {positionsInput.value=JSON.stringify(positions)};
 // equation
 var eq=board.create('text', [-4, text_top, function(){return eqn}], {
   useMathJax: true,
@@ -378,13 +378,13 @@ var fill_ans = function() {
   }
 }
 
-if (stateut.value != '') {
- oxid = JSON.parse(stateut.value);
+if (stateInput.value != '') {
+ oxid = JSON.parse(stateInput.value);
  fill_ans();
   } else
 {  for (i = 0; isless(i, maxatoms); i++) {oxid[i]="0"}
 fill_ans();
-stateut.value=JSON.stringify(oxid);
+stateInput.value=JSON.stringify(oxid);
 }
 
 
@@ -575,7 +575,7 @@ function createSelectDropdown() {
   
 const selectTag = createSelectDropdown();
 console.log(selectTag);
-var select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
+const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
 const dropdown = document.getElementById("inp"+{#rqm#});
