@@ -36,7 +36,7 @@ MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari
 JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
 JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
 let rqm={#rqm#};
-
+console.log('rqm is ',rqm);
 var board = JXG.JSXGraph.initBoard(divid, {
   boundingbox: [-5, 5, 15, -5],
   axis: false,
