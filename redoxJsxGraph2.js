@@ -36,7 +36,6 @@ MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari
 JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
 JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
 let rqm={#rqm#};
-console.log('divid is ',divid);
 var board = JXG.JSXGraph.initBoard(divid, {
   boundingbox: [-5, 5, 15, -5],
   axis: false,
@@ -580,7 +579,7 @@ console.log(selectTag);
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
-const dropdown = document.getElementById("inp"+{#rqm#});
+const dropdown = document.getElementById("inp"+uid);
 console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
