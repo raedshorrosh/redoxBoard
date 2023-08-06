@@ -27,7 +27,7 @@
  var checkAnswer=[];
 </script>
   
-[[jsxgraph  width="800px" height="250px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
+[[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
 
  MathJax.Hub.Config({showMathMenu: false});
 MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)
@@ -37,7 +37,7 @@ JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
 JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
 let rqm={#rqm#};
 var board = JXG.JSXGraph.initBoard(divid, {
-  boundingbox: [-5, 5, 15, -1.875],
+  boundingbox: [-5, 5, 15, -5],
   axis: false,
   showCopyright: false,
   showNavigation: false,
