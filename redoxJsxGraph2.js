@@ -27,7 +27,7 @@
  var checkAnswer=[];
 </script>
   
-[[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
+[[jsxgraph  width="800px" height="250px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
 
  MathJax.Hub.Config({showMathMenu: false});
 MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)
