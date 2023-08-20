@@ -84,7 +84,9 @@ var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
-if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+//if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+positionsInput.value=JSON.stringify(positions);
+
 // equation
 var eq=board.create('text', [-4, text_top, function(){return eqn}], {
   useMathJax: true,
@@ -709,6 +711,7 @@ if (design==1){
       redInput.value=JSON.stringify([0,0]);
    oxInput.value=JSON.stringify([0,0]);
    */
+	
     var e = new Event('change');
     stateInput.dispatchEvent(e);
 }
