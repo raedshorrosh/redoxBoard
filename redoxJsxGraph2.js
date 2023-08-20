@@ -702,11 +702,13 @@ if (design != 1) {
 } 
 
 if (design==1){
-       let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
-       stateInput.value=JSON.stringify(temp);
+/*
+     let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
+      stateInput.value=JSON.stringify(temp);
       positionsInput.value=JSON.stringify(temp);
       redInput.value=JSON.stringify([0,0]);
-      oxInput.value=JSON.stringify([0,0]);
+   oxInput.value=JSON.stringify([0,0]);
+   */
     var e = new Event('change');
     stateInput.dispatchEvent(e);
 }
