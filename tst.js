@@ -692,6 +692,7 @@ if (design != 1) {
 } 
 
 if (design==1){
+for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: false});  }
 /*
      let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
       stateInput.value=JSON.stringify(temp);
