@@ -71,20 +71,15 @@ var text_col = '#000000',
 var design = {#design#};
 var oxid = [];
 
-if (design!=1){
+
     var positions = {#positions_v#};
     var oxid_ans = {#oxid#};
-}
-else {
-   var positions = [];
-    var oxid_ans = [];
-}
 
 var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
-if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+positionsInput.value=JSON.stringify(positions);
 
 
 // equation
@@ -123,9 +118,9 @@ var p = [],   c = [],   i=0;
 for (i = 0; isless(i, maxatoms); i++) {
 
   var ppoint = [-4 + 2 * radius * i, text_top - radd];
-  if (design != 1) {
+
     ppoint = [positions[i], text_top - radd];
-     }
+
   p[i] = board.create('glider', [ppoint[0], ppoint[1], lineU], {
     size: 0,
     name: "",
@@ -226,15 +221,8 @@ var L3 = board.create('line', [ap3, ap4], {
   straightLast: false
 });
 
-if (design != 1) {
     var ta_red = {#red_map#};
     var ta_ox = {#ox_map#};
-}
-else
-{
-   var ta_red = [1,1];
-    var ta_ox = [1,1];
-}
 
 var inter1 = board.create('intersection', [c[ta_red[0] - 1], L1, 0], {
   name: '',
@@ -704,14 +692,14 @@ if (design != 1) {
 } 
 
 if (design==1){
-
+/*
      let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
       stateInput.value=JSON.stringify(temp);
       positionsInput.value=JSON.stringify(temp);
       redInput.value=JSON.stringify([0,0]);
    oxInput.value=JSON.stringify([0,0]);
   
-	
+*/	
     var e = new Event('change');
     stateInput.dispatchEvent(e);
 }
