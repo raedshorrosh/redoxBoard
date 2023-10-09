@@ -705,6 +705,6 @@ for (i = 0; isless(i, maxatoms); i++) {  p[i].setAttribute({fixed: false}); }
 */	
     var e = new Event('change');
     stateInput.dispatchEvent(e);
-}
+
 [[/jsxgraph]]
 <!-- end of graph code -->
