@@ -94,8 +94,8 @@ var lineU = board.create('segment', [
   [-4.5, text_top -  radd],
   [15, text_top - radd]
 ], {
-  strokeWidth: 0,
-  highlightStrokeWidth: 0,
+  strokeWidth: 1,
+  highlightStrokeWidth: 1,
   fixed: true
 });
 
@@ -105,8 +105,8 @@ var lineD = board.create('segment', [
   [15, text_top - radius-radd]
 //  [15, text_top - 2 * radd - radius]
 ], {
-  strokeWidth: 0,
-  highlightStrokeWidth: 0,
+  strokeWidth: 1,
+  highlightStrokeWidth: 1,
   fixed: true
 });
 
@@ -177,7 +177,7 @@ fixed:function(){return answered}
 };
 var psAtt = {
   name: '',
-  size: 0,
+  size: 1,
  // attractors: c,
   attractorDistance: radius,
   showInfobox: false,
@@ -225,12 +225,12 @@ var L3 = board.create('line', [ap3, ap4], {
 
 var inter1 = board.create('intersection', [c[ta_red[0] - 1], L1, 0], {
   name: '',
-  size: 0,
+  size: 1,
   showInfobox: false
 });
 var inter2 = board.create('intersection', [c[ta_red[1] - 1], L3, 0], {
   name: '',
-  size: 0,
+  size: 1,
   showInfobox: false
 });
 //board.create('text',[0,-4.5,function(){return inter1.Y().toFixed(2)+' '+inter2.Y().toFixed(2)}]);
@@ -307,12 +307,12 @@ var L33 = board.create('line', [ap33, ap44], {
 
 var inter11 = board.create('intersection', [c[ta_ox[0] - 1], L11, 0], {
   name: '',
-  size: 0,
+  size: 1,
   showInfobox: false
 });
 var inter22 = board.create('intersection', [c[ta_ox[1] - 1], L33, 0], {
   name: '',
-  size: 0,
+  size: 1,
   showInfobox: false
 });
 //board.create('text',[0,-3.5,function(){return inter11.X().toFixed(2)+' '+inter22.X().toFixed(2)}]);
@@ -564,7 +564,7 @@ function createSelectDropdown() {
     }
   
 const selectTag = createSelectDropdown();
-console.log(selectTag);
+//console.log(selectTag);
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
