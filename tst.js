@@ -687,12 +687,14 @@ board.on('update', function() {
 
 
 //----------------
+
 if (design == 0) {
   for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: true});  }
 } 
 
 if (design == 1) {
 for (i = 0; isless(i, maxatoms); i++) {  p[i].setAttribute({fixed: false}); }
+	console.log(design);
 }
 	board.update();
 /*
