@@ -687,17 +687,13 @@ board.on('update', function() {
 
 
 //----------------
-if (design != 1) {
+if (design ==0) {
   for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: true});  }
 } 
 
-if (design==1){
-for (i = 0; isless(i, maxatoms); i++) {   c[i].setAttribute({fixed: false}); 
-				           p[i].setAttribute({fixed: false}); 
-				           c[i].prepareUpdate().update(true).updateRenderer();
-				           p[i].prepareUpdate().update(true).updateRenderer();
-				           
-				      }
+elseif (design ==1) {
+for (i = 0; isless(i, maxatoms); i++) {  p[i].setAttribute({fixed: false}); }
+}
 	board.update();
 /*
      let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
