@@ -721,10 +721,11 @@ if (design==1){
       positionsInput.value=JSON.stringify(temp);
       redInput.value=JSON.stringify([0,0]);
    oxInput.value=JSON.stringify([0,0]);
-  
+}  
 */	
+
     var e = new Event('change');
     stateInput.dispatchEvent(e);
-}
+
 [[/jsxgraph]]
 <!-- end of graph code -->
