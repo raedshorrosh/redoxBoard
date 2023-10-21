@@ -140,7 +140,7 @@ for (i = 0; isless(i, maxatoms); i++) {
 if (design != 1) {
     ppoint = [positions[i], text_top - radd];
      }
- /*    
+ */    
   p[i] = board.create('glider', [ppoint[0], ppoint[1], lineU], {
     size: 0,
     name: "",
