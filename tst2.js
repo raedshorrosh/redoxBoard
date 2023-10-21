@@ -133,9 +133,14 @@ var p = [],   c = [],   i=0;
 for (i = 0; isless(i, maxatoms); i++) {
 
   var ppoint = [-4 + 2 * radius * i, text_top - radd];
-  if (design != 1) {
+//New
+  ppoint = [positions[i], text_top - radd];	
+//__________________________________________	
+/*old
+if (design != 1) {
     ppoint = [positions[i], text_top - radd];
      }
+ /*    
   p[i] = board.create('glider', [ppoint[0], ppoint[1], lineU], {
     size: 0,
     name: "",
