@@ -74,7 +74,7 @@ var oxid = [];
 // New --------------------
     var positions = {#positions_v#};
     var oxid_ans = {#oxid#};
-/----------------------------
+//----------------------------
 /* old
 if (design!=1){
     var positions = {#positions_v#};
