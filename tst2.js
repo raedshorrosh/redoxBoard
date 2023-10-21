@@ -71,6 +71,11 @@ var text_col = '#000000',
 var design = {#design#};
 var oxid = [];
 
+// New --------------------
+    var positions = {#positions_v#};
+    var oxid_ans = {#oxid#};
+/----------------------------
+/* old
 if (design!=1){
     var positions = {#positions_v#};
     var oxid_ans = {#oxid#};
@@ -79,12 +84,17 @@ else {
    var positions = [];
     var oxid_ans = [];
 }
-
+*/
 var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
-if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+
+//New
+  positionsInput.value=JSON.stringify(positions)
+//----------------------------------
+
+//old if (design!=1) {positionsInput.value=JSON.stringify(positions)};
 
 
 // equation
@@ -703,6 +713,7 @@ if (design != 1) {
   for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: true});  }
 } 
 
+/* old
 if (design==1){
 
      let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
@@ -711,7 +722,7 @@ if (design==1){
       redInput.value=JSON.stringify([0,0]);
    oxInput.value=JSON.stringify([0,0]);
   
-	
+*/	
     var e = new Event('change');
     stateInput.dispatchEvent(e);
 }
