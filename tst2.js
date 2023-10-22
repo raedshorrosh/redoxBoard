@@ -714,10 +714,11 @@ board.on('update', function() {
 
 
 //----------------
+/*
 if (design != 1) {
   for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: true});  }
 } 
-
+*/
 /* old
 if (design==1){
 
