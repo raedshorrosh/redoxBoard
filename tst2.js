@@ -91,7 +91,7 @@ var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
 
 //New
-  positionsInput.value=JSON.stringify(positions)
+  positionsInput.value=JSON.stringify(positions);
 //----------------------------------
 
 //old if (design!=1) {positionsInput.value=JSON.stringify(positions)};
