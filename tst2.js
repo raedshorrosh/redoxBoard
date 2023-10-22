@@ -146,10 +146,11 @@ if (design != 1) {
     name: "",
     label: {
       offset: [-6.5, 0],
-      cssStyle: "font-weight: bold",
-      fixed: false;
+      cssStyle: "font-weight: bold"
+      
     },
-    showInfobox: false
+    showInfobox: false,
+    fixed: false
   });
 
 
@@ -159,7 +160,7 @@ if (design != 1) {
   c[i] = board.create('circle', [p[i], radius], {
     strokeWidth: 1,
     strokeColor: circle_col,
-    fixed: false;
+    fixed: false
   });
 
 
