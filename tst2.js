@@ -389,7 +389,8 @@ var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
     p[i].setAttribute({
       name: oxid[i],
-      cssStyle: "font-weight: bold"
+      cssStyle: "font-weight: bold",
+      fixed: false
     });
     p[i].prepareUpdate().update(true).updateRenderer();board.update();
 
