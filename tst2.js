@@ -393,8 +393,8 @@ var fill_ans = function() {
       cssStyle: "font-weight: bold",
       fixed: false
     });
-    p[i]=[positions[i], text_top - radd]; 
-    p[i].prepareUpdate().update(true).updateRenderer();board.update();
+    //p[i].prepareUpdate().update(true).updateRenderer();
+	  board.update();
 
   }
 }
