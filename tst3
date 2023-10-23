@@ -71,20 +71,14 @@ var text_col = '#000000',
 var design = {#design#};
 var oxid = [];
 
-if (design!=1){
-    var positions = {#positions_v#};
-    var oxid_ans = {#oxid#};
-}
-else {
-   var positions = [];
-    var oxid_ans = [];
-}
+var positions = {#positions_v#};
+var oxid_ans = {#oxid#};
 
 var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
-if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+positionsInput.value=JSON.stringify(positions);
 
 
 // equation
@@ -376,8 +370,8 @@ var fill_ans = function() {
       name: oxid[i],
       cssStyle: "font-weight: bold"
     });
-    p[i].prepareUpdate().update(true).updateRenderer();board.update();
-
+      p[i].setPositionDirectly(JXG.COORDS_BY_USER, [positions[i], p[i].Y()]);
+      board.update();
   }
 }
 
@@ -696,24 +690,9 @@ board.on('update', function() {
 
   } //for
 });
-
-
-//----------------
-if (design != 1) {
-  for (i = 0; isless(i, maxatoms); i++) {    p[i].setAttribute({fixed: true});  }
-} 
-
-if (design==1){
-
-     let temp=[];  for (i = 0; isless(i, maxatoms); i++) {temp[i]="0";oxid[i]="0"};
-      stateInput.value=JSON.stringify(temp);
-      positionsInput.value=JSON.stringify(temp);
-      redInput.value=JSON.stringify([0,0]);
-   oxInput.value=JSON.stringify([0,0]);
-  
 	
     var e = new Event('change');
     stateInput.dispatchEvent(e);
-}
+
 [[/jsxgraph]]
 <!-- end of graph code -->
