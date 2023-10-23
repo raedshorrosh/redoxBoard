@@ -127,7 +127,8 @@ for (i = 0; isless(i, maxatoms); i++) {
       offset: [-6.5, 0],
       cssStyle: "font-weight: bold"
     },
-    showInfobox: false
+    showInfobox: false,
+    fixed:false
   });
 
 
@@ -136,7 +137,8 @@ for (i = 0; isless(i, maxatoms); i++) {
   //circles
   c[i] = board.create('circle', [p[i], radius], {
     strokeWidth: 1,
-    strokeColor: circle_col
+    strokeColor: circle_col,
+    fixed: false
   });
 
 
@@ -368,7 +370,8 @@ var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
     p[i].setAttribute({
       name: oxid[i],
-      cssStyle: "font-weight: bold"
+      cssStyle: "font-weight: bold",
+      fixed: false
     });
       p[i].setPositionDirectly(JXG.COORDS_BY_USER, [positions[i], p[i].Y()]);
       board.update();
