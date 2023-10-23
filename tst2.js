@@ -394,6 +394,7 @@ var fill_ans = function() {
       fixed: false
     });
     //p[i].prepareUpdate().update(true).updateRenderer();
+      p[i].setPositionDirectly(JXG.COORDS_BY_USER, [positions[i], p[i].Y()]);
 	  board.update();
 
   }
