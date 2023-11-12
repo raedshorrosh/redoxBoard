@@ -213,11 +213,12 @@ var L2 = board.create('line', [ap2, ap4], {
   straightLast: false
 });
 var L3 = board.create('line', [ap3, ap4], {
-  strokecolor: red_col,
-  firstArrow: {
+ strokecolor: red_col,
+/*  firstArrow: {
     type: 7,
     size: 5
   },
+  */
   straightFirst: false,
   straightLast: false
 });
