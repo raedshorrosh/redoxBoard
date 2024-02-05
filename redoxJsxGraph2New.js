@@ -1,4 +1,5 @@
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid']]
+  /* TO ENABLE USING THE CODE IN ATO */
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
   function igrt(x,y)  {return (x>y)};
@@ -7,14 +8,10 @@
   function ibetween(a,x,y) {return ((a>x)&&(a<y))};
   function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 
-/*          
-MathJax.Hub.Config({showMathMenu: false});
-MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)
-}
-});*/
+
 JXG.Options.text.cssDefaultStyle = 'direction:ltr; font-family:Arial;';
 JXG.Options.text.highlightCssDefaultStyle = 'direction:ltr';
-let rqm={#rqm#};
+
 var board = JXG.JSXGraph.initBoard(divid, {
   boundingbox: [-5, 5, 15, -5],
   axis: false,
@@ -28,7 +25,7 @@ var board = JXG.JSXGraph.initBoard(divid, {
   
 });
 var uid=board.generateId();
-console.log('unique id is ',uid);
+
 
 var text_top = 2,
   radius = {#radius#},
@@ -345,13 +342,6 @@ var oxidtext = board.create('text', [0, 0, function() {
 
 
 
-//hide or show the fields for design
-/*document.getElementById("div").setAttribute("id",{#rqm#});
-if (design == 1) {
-document.getElementById({#rqm#}).style.display = "block"
-} 
-*/
-
 var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
     p[i].setAttribute({
@@ -578,12 +568,10 @@ function createSelectDropdown() {
     }
   
 const selectTag = createSelectDropdown();
-console.log(selectTag);
 const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
 const dropdown = document.getElementById("inp"+uid);
-console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
@@ -624,9 +612,7 @@ document.getElementById(flagsid).addEventListener('change' ,flagdeserialiser);
 function flagdeserialiser() {
 if  ( ! (answered)) try{
 let val=document.getElementById(flagsid).value;
-console.log(val);
  flags = JSON.parse(val);
-console.log('flags is ',flags);
 /* Then the logic to check if flags are up. */
 	if (flags[0]==1)
        {
