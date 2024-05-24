@@ -3,21 +3,6 @@
   function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 </script>
 
-<!--JSXGraph MathJax Specifications -->
-     <script>
-               window.MathJax = {
-               tex: {
-               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-               displayMath: [ ['<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>'</mo><mo>,</mo><mo>'</mo><annotation encoding="LaTeX">','</annotation></semantics></math>'], ["\\[","\\]"] ],
-               packages: ['base', 'ams'] },
-               options: {
-               ignoreHtmlClass: 'tex2jax_ignore',
-               processHtmlClass: 'tex2jax_process'
-               }
-               };
-     </script>
-
-
 <script type="text/javascript">
  var checkAnswer=[];
 </script>
