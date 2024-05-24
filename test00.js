@@ -3,6 +3,21 @@
   function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 </script>
 
+<!--JSXGraph MathJax Specifications -->
+     <script>
+               window.MathJax = {
+               tex: {
+               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+               displayMath: [ ['<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>'</mo><mo>,</mo><mo>'</mo><annotation encoding="LaTeX">','</annotation></semantics></math>'], ["\\[","\\]"] ],
+               packages: ['base', 'ams'] },
+               options: {
+               ignoreHtmlClass: 'tex2jax_ignore',
+               processHtmlClass: 'tex2jax_process'
+               }
+               };
+     </script>
+
+
 <script type="text/javascript">
  var checkAnswer=[];
 </script>
@@ -100,7 +115,7 @@ var p = [],   c = [],   i=0;
 
 
 //circle center and labels
-for (i = 0; isless(i, maxatoms); i++) {
+for (i = 0; i!=maxatoms; i++) {
 
   var ppoint = [-4 + 2 * radius * i, text_top - radd];
   if (design != 1) {
@@ -353,7 +368,7 @@ document.getElementById({#rqm#}).style.display = "block"
 } 
 
 var fill_ans = function() {
-  for (i = 0; isless(i, maxatoms); i++) {
+  for (i = 0; (i!= maxatoms); i++) {
     p[i].setAttribute({
       name: oxid[i],
       cssStyle: "font-weight: bold"
@@ -367,7 +382,7 @@ if (stateInput.value != '') {
  oxid = JSON.parse(stateInput.value);
  fill_ans();
   } else
-{  for (i = 0; isless(i, maxatoms); i++) {oxid[i]="0"}
+{  for (i = 0; (i!= maxatoms); i++) {oxid[i]="0"}
 fill_ans();
 stateInput.value=JSON.stringify(oxid);
 }
@@ -417,7 +432,7 @@ if (oxInput.value != '') {
 ap1.on('drag', function(e, i) {
   var j;
  let st=false;
-  for (j = 0; isless(j, maxatoms); j++) {
+  for (j = 0; (j!= maxatoms); j++) {
     st=false;
      let aa=[as1.X(),as1.Y()],bb=[p[j].X(),p[j].Y()];
  if ((radius>=dist(aa,bb)) ) {
@@ -449,7 +464,7 @@ if (!st){
 ap3.on('drag', function(e, i) {
   var j;
  let st=false;
-  for (j = 0; isless(j, maxatoms); j++) {
+  for (j = 0; (j!= maxatoms); j++) {
     st=false;
      let aa=[as2.X(),as2.Y()],bb=[p[j].X(),p[j].Y()];
  if ((radius>= dist(aa,bb)) ) {
@@ -481,7 +496,7 @@ if (!st){
 ap11.on('drag', function(e, i) {
   var j;
  let st=false;
-  for (j = 0; isless(j, maxatoms); j++) {
+  for (j = 0; (j!= maxatoms); j++) {
     st=false;
      let aa=[as11.X(),as11.Y()],bb=[p[j].X(),p[j].Y()];
  if ((radius>= dist(aa,bb)) ) {
@@ -514,7 +529,7 @@ if (!st){
 ap33.on('drag', function(e, i) {
   var j;
  let st=false;
-  for (j = 0; isless(j, maxatoms); j++) {
+  for (j = 0; (j!= maxatoms); j++) {
     st=false;
      let aa=[as22.X(),as22.Y()],bb=[p[j].X(),p[j].Y()];
  if ((radius>=dist(aa,bb)) ) {
