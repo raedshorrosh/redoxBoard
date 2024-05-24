@@ -646,7 +646,7 @@ board.on('update', function() {
 
   var o, nameArr;
 
-  if (iand((typeof board.touches != 'undefined'), board.touches.length>0))) {
+  if (iand((typeof board.touches != 'undefined'), board.touches.length>0)){
     o = board.touches[0].obj;
   } else if (iand((board.mouse != null), (typeof board.mouse.obj != 'undefined'))) {
     o = board.mouse.obj;
