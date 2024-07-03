@@ -1,13 +1,3 @@
-<!--------------------------------------------------------------------------------------------------------------------------------><script>
-  function isless(x,y) {return (x<y)};
-  function iand(x,y)  {return (x&&y)};
-  function igrt(x,y)  {return (x>y)};
-  function igrtq(x,y)  {return (x>=y)};
-  function ispositive(x) {return (x>0)};
-  function ibetween(a,x,y) {return ((a>x)&&(a<y))};
-  function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
-</script>
-
 <!--JSXGraph MathJax Specifications -->
      <script>
                window.MathJax = {
@@ -28,6 +18,13 @@
 </script>
   
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
+ function isless(x,y) {return (x<y)};
+  function iand(x,y)  {return (x&&y)};
+  function igrt(x,y)  {return (x>y)};
+  function igrtq(x,y)  {return (x>=y)};
+  function ispositive(x) {return (x>0)};
+  function ibetween(a,x,y) {return ((a>x)&&(a<y))};
+  function dist(a,b){return Math.sqrt((a[0]-b[0])*(a[0]-b[0])+(a[1]-b[1])*(a[1]-b[1]))};
 
  MathJax.Hub.Config({showMathMenu: false});
 MathJax.Hub.Config({"HTML-CSS": {scale: (MathJax.Hub.Browser.isSafari ? {#safari#}: 100)
