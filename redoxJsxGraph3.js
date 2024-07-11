@@ -601,7 +601,7 @@ function createSelectDropdown() {
   
 const selectTag = createSelectDropdown();
 console.log(selectTag);
-const select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
+var select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
 const dropdown = document.getElementById("inp"+uid);
