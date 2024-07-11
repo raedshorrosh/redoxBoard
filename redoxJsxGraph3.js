@@ -380,7 +380,7 @@ var fill_ans = function() {
       cssStyle: "font-weight: bold"
     });
     p[i].prepareUpdate().update(true).updateRenderer();board.update();
-
+console.log(p);
   }
 }
 
