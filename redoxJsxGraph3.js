@@ -83,7 +83,9 @@ var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
-if (design!=1) {positionsInput.value=JSON.stringify(positions)};
+if (design!=1) {positionsInput.value=JSON.stringify(positions);
+		 positionsInput.dispatchEvent(new Event('change'));
+	       };
 
 
 // equation
@@ -389,6 +391,7 @@ if (stateInput.value != '') {
 {  for (i = 0; isless(i, maxatoms); i++) {oxid[i]="0"}
 fill_ans();
 stateInput.value=JSON.stringify(oxid);
+ stateInput.dispatchEvent(new Event('change'));
 }
 
 
@@ -406,6 +409,8 @@ if (redInput.value != '') {
   }
 } else {
   redInput.value = JSON.stringify([0, 0]);
+  redInput.dispatchEvent(new Event('change'));
+	
   board.update();
 }
 
@@ -423,6 +428,7 @@ if (oxInput.value != '') {
   }
 } else {
   oxInput.value = JSON.stringify([0, 0]);
+  oxInput.dispatchEvent(new Event('change'));	
   board.update();
 }
 
@@ -445,9 +451,12 @@ ap1.on('drag', function(e, i) {
         let temp = JSON.parse(redInput.value);
         temp[0] = j + 1;
         redInput.value = JSON.stringify(temp);
+        redInput.dispatchEvent(new Event('change'));
 
       } else {
-        redInput.value = JSON.stringify([j + 1])
+        redInput.value = JSON.stringify([j + 1]);
+        redInput.dispatchEvent(new Event('change'));
+	      
       }
  break;
     }
@@ -456,9 +465,13 @@ if (!st){
         let temp = JSON.parse(redInput.value);
        temp[0]=0;
         redInput.value = JSON.stringify(temp);
+        redInput.dispatchEvent(new Event('change'));
+
 
       } else {
-        redInput.value = JSON.stringify([])
+        redInput.value = JSON.stringify([]);
+        redInput.dispatchEvent(new Event('change'));
+	 
       }
   }
 }
@@ -477,9 +490,12 @@ ap3.on('drag', function(e, i) {
         let temp = JSON.parse(redInput.value);
         temp[1] = j + 1;
         redInput.value = JSON.stringify(temp);
+       redInput.dispatchEvent(new Event('change'));
 
       } else {
-        redInput.value = JSON.stringify([0,j + 1])
+        redInput.value = JSON.stringify([0,j + 1]);
+        redInput.dispatchEvent(new Event('change'));
+      
       }
  break;
     }
@@ -488,10 +504,12 @@ if (!st){
         let temp = JSON.parse(redInput.value);
         temp[1]=0;
         redInput.value = JSON.stringify(temp);
+       redInput.dispatchEvent(new Event('change'));
 
       } else {
-        redInput.value = JSON.stringify([])
-      }
+        redInput.value = JSON.stringify([]);
+        redInput.dispatchEvent(new Event('change'));
+       }
   }
 }
 });
@@ -520,9 +538,11 @@ if (!st){
         let temp = JSON.parse(oxInput.value);
        temp[0]=0;
         oxInput.value = JSON.stringify(temp);
+        oxInput.dispatchEvent(new Event('change'));	 
 
       } else {
-        oxInput.value = JSON.stringify([])
+        oxInput.value = JSON.stringify([]);
+        oxInput.dispatchEvent(new Event('change'));	 
       }
   }
 }
@@ -542,9 +562,10 @@ ap33.on('drag', function(e, i) {
         let temp = JSON.parse(oxInput.value);
         temp[1] = j + 1;
         oxInput.value = JSON.stringify(temp);
-
+        oxInput.dispatchEvent(new Event('change'));
       } else {
-        oxInput.value = JSON.stringify([0,j + 1])
+        oxInput.value = JSON.stringify([0,j + 1]);
+        oxInput.dispatchEvent(new Event('change'));	      
       }
  break;
     }
@@ -553,9 +574,10 @@ if (!st){
         let temp = JSON.parse(oxInput.value);
        temp[1]=0;
         oxInput.value = JSON.stringify(temp);
-
+        oxInput.dispatchEvent(new Event('change'));
       } else {
-        oxInput.value = JSON.stringify([])
+        oxInput.value = JSON.stringify([]);
+	oxInput.dispatchEvent(new Event('change'));
       }
   }
 }
@@ -593,7 +615,8 @@ p.forEach(function(el, i, p) {
         oxid[i]=selectedValue;
 
         if (stateInput.value == '') {
-          stateInput.value = JSON.stringify(oxid)
+          stateInput.value = JSON.stringify(oxid);
+	stateInput.dispatchEvent(new Event('change'));
         }
         p[i].setAttribute({
           name: oxid[i],
@@ -604,11 +627,13 @@ p.forEach(function(el, i, p) {
       let temp = JSON.parse(stateInput.value);
       temp[i] = oxid[i];
       stateInput.value = JSON.stringify(temp);
+	stateInput.dispatchEvent(new Event('change'));
     } /*!answered*/
   });
   el.on('drag', function(e) {
       positions[i] = p[i].X().toFixed(3);
     positionsInput.value = JSON.stringify(positions);
+    positionsInput.dispatchEvent(new Event('change'));	  
   });
 
 });
@@ -665,6 +690,7 @@ board.on('update', function() {
         p[0].prepareUpdate().update(true).updateRenderer();
     positions[0] = p[0].X().toFixed(3);
     positionsInput.value = JSON.stringify(positions);
+    positionsInput.dispatchEvent(new Event('change'));	      
 
         return;
       }
@@ -674,6 +700,7 @@ board.on('update', function() {
         p[maxatoms - 1].prepareUpdate().update(true).updateRenderer();
         positions[maxatoms - 1] = p[maxatoms - 1].X().toFixed(3);
         positionsInput.value = JSON.stringify(positions);
+        positionsInput.dispatchEvent(new Event('change'));	      
         return;
       }
     } else if (o == p[i]) {
@@ -682,6 +709,7 @@ board.on('update', function() {
         p[i].prepareUpdate().update(true).updateRenderer();
         positions[i] = p[i].X().toFixed(3);
        positionsInput.value = JSON.stringify(positions);
+       positionsInput.dispatchEvent(new Event('change'));	      
 
         return;
       }
@@ -690,6 +718,7 @@ board.on('update', function() {
         p[i].prepareUpdate().update(true).updateRenderer();
         positions[i] = p[i].X().toFixed(3);
         positionsInput.value = JSON.stringify(positions);
+	positionsInput.dispatchEvent(new Event('change'));
         return;
       }
 
@@ -710,11 +739,11 @@ if (design==1){
       stateInput.value=JSON.stringify(temp);
       positionsInput.value=JSON.stringify(temp);
       redInput.value=JSON.stringify([0,0]);
-   oxInput.value=JSON.stringify([0,0]);
-  
-	
-    var e = new Event('change');
-    stateInput.dispatchEvent(e);
+      oxInput.value=JSON.stringify([0,0]);
+      stateInput.dispatchEvent(new Event('change'));
+      positionsInput.dispatchEvent(new Event('change'));	
+      redInput.dispatchEvent(new Event('change'));
+      oxInput.dispatchEvent(new Event('change'));	      
 }
 [[/jsxgraph]]
 <!-- end of graph code -->
