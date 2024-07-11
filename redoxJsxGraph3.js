@@ -599,12 +599,12 @@ function createSelectDropdown() {
       return selectTag;
     }
   
-const selectTag = createSelectDropdown();
+var selectTag = createSelectDropdown();
 console.log(selectTag);
 var select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
-const dropdown = document.getElementById("inp"+uid);
+var dropdown = document.getElementById("inp"+uid);
 console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
