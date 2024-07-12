@@ -369,10 +369,10 @@ var oxidtext = board.create('text', [0, 0, function() {
 console.log("so0");
 
 //hide or show the fields for design
-document.getElementById("div").setAttribute("id",{#rqm#});
-if (design == 1) {
-document.getElementById({#rqm#}).style.display = "block"
-} 
+//document.getElementById("div").setAttribute("id",{#rqm#});
+//if (design == 1) {
+//document.getElementById({#rqm#}).style.display = "block"
+//} 
 console.log("so1");
 
 var fill_ans = function() {
