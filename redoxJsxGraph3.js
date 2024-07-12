@@ -372,6 +372,7 @@ document.getElementById("div").setAttribute("id",{#rqm#});
 if (design == 1) {
 document.getElementById({#rqm#}).style.display = "block"
 } 
+console.log("so0");
 
 var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
@@ -383,6 +384,7 @@ var fill_ans = function() {
 console.log(p);
   }
 }
+console.log("so1");
 
 if (stateInput.value != '') {
  oxid = JSON.parse(stateInput.value);
@@ -582,7 +584,6 @@ if (!st){
   }
 }
 });
-console.log("so far");
 function createSelectDropdown() {
 	
       let selectTag = {#ox_no_txt#}+': '+ '<select id='+"inp"+uid+' style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
