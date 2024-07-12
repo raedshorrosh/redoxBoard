@@ -582,7 +582,7 @@ if (!st){
   }
 }
 });
-
+console.log("so far");
 function createSelectDropdown() {
 	
       let selectTag = {#ox_no_txt#}+': '+ '<select id='+"inp"+uid+' style="font-family: Arial; font-size: 14px; padding: 5px; border: 1px solid #ccc; border-radius: 4px;>';
