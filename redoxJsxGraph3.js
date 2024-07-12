@@ -366,13 +366,14 @@ var oxidtext = board.create('text', [0, 0, function() {
 });
 
 
+console.log("so0");
 
 //hide or show the fields for design
 document.getElementById("div").setAttribute("id",{#rqm#});
 if (design == 1) {
 document.getElementById({#rqm#}).style.display = "block"
 } 
-console.log("so0");
+console.log("so1");
 
 var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
@@ -381,10 +382,8 @@ var fill_ans = function() {
       cssStyle: "font-weight: bold"
     });
     p[i].prepareUpdate().update(true).updateRenderer();board.update();
-console.log(p);
   }
 }
-console.log("so1");
 
 if (stateInput.value != '') {
  oxid = JSON.parse(stateInput.value);
