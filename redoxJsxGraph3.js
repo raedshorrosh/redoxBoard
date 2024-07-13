@@ -1,21 +1,4 @@
 
-
-
-<!--JSXGraph MathJax Specifications -->
-     <script>
-               window.MathJax = {
-               tex: {
-               inlineMath: [  ["\(","\)"] ],
-               packages: ['base', 'ams'] },
-               options: {
-               ignoreHtmlClass: 'tex2jax_ignore',
-               processHtmlClass: 'tex2jax_process'
-               }
-               };
-     </script>
-
-
-  
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid' ]]
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
