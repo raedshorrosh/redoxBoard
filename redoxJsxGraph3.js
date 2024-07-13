@@ -647,10 +647,10 @@ if  ( ! (answered)) try{
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
-  { red_txt='</span><span style="font-size: 1em; color: green;">'+ {#red_txt#}+'✔</span><span style="font-size: 1rem;">';
+  { red_txt='<span style="font-size: 1em; color: green;">'+ {#red_txt#}+'✔</span>';
   }
    else 
-  { red_txt='</span><span style="font-size: 1em; color: red;">'+ {#red_txt#}+'❌</span><span style="font-size: 1rem;">';
+  { red_txt='<span style="font-size: 1em; color: red;">'+ {#red_txt#}+'❌</span>';
   }
   
   if (iand((inter11.Y()!=0),(inter22.Y()!=0)))
