@@ -14,9 +14,7 @@
                };
      </script>
 
-<script type="text/javascript">
- var checkAnswer=[];
-</script>
+
   
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid' ]]
   function isless(x,y) {return (x<y)};
