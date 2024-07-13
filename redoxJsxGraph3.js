@@ -654,17 +654,17 @@ if  ( ! (answered)) try{
   }
   
   if (iand((inter11.Y()!=0),(inter22.Y()!=0)))
-  { ox_txt='</span><span style="font-size: 1em; color: green;">'+ {#ox_txt#}+'✔</span><span style="font-size: 1rem;">';
+  { ox_txt='<span style="font-size: 1em; color: green;">'+ {#ox_txt#}+'✔</span>';
   }
    else 
-  { ox_txt='</span><span style="font-size: 1em; color: red;">'+ {#ox_txt#}+'❌</span><span style="font-size: 1rem;">';
+  { ox_txt='<span style="font-size: 1em; color: red;">'+ {#ox_txt#}+'❌</span>';
   }
   board.update();
   for (i = 0; isless(i,maxatoms); i++){
   if (parseFloat(p[i].name)==parseFloat(oxid_ans[i])) {
-  p[i].name='</span><span style="font-size: 1em; color: green;">'+p[i].name+'✔</span><span style="font-size: 1rem;">';   board.update();}
+  p[i].name='<span style="font-size: 1em; color: green;">'+p[i].name+'✔</span>';   board.update();}
   else 
- { p[i].name='</span><span style="font-size: 1em; color: red;">'+p[i].name+'❌</span><span style="font-size: 1rem;">';  board.update();
+ { p[i].name='<span style="font-size: 1em; color: red;">'+p[i].name+'❌</span>';  board.update();
  }
   
  }
