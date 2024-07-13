@@ -5,8 +5,7 @@
      <script>
                window.MathJax = {
                tex: {
-               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-               displayMath: [ ['<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>'</mo><mo>,</mo><mo>'</mo><annotation encoding="LaTeX">','</annotation></semantics></math>'], ["\\[","\\]"] ],
+               inlineMath: [  ["\(","\)"] ],
                packages: ['base', 'ams'] },
                options: {
                ignoreHtmlClass: 'tex2jax_ignore',
