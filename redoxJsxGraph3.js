@@ -19,7 +19,7 @@
  var checkAnswer=[];
 </script>
   
-[[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef']]
+[[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid' ]]
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
   function igrt(x,y)  {return (x>y)};
@@ -639,7 +639,10 @@ p.forEach(function(el, i, p) {
 });
 
  //===================
-checkAnswer[rqm] =function() {
+document.getElementById(flagsid).addEventListener('change' ,flagdeserialiser);
+function flagdeserialiser() {
+if  ( ! (answered)) try{
+	
   
  answered=true;
 
@@ -665,8 +668,10 @@ checkAnswer[rqm] =function() {
  }
   
  }
-  
-}
+   }
+	catch(err) { }
+} 
+
  
 
 //making sure not to change the order of the circles and other stuff
