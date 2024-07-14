@@ -1,3 +1,4 @@
+//new
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid' ]]
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
@@ -27,7 +28,6 @@ var board = JXG.JSXGraph.initBoard(divid, {
   
 });
 var uid=board.generateId();
-console.log('unique id is ',uid);
 
 var text_top = 2,
   radius = {#radius#},
@@ -345,14 +345,12 @@ var oxidtext = board.create('text', [0, 0, function() {
 });
 
 
-console.log("so0");
 
 //hide or show the fields for design
 //document.getElementById("div").setAttribute("id",{#rqm#});
 //if (design == 1) {
 //document.getElementById({#rqm#}).style.display = "block"
 //} 
-console.log("so1");
 
 var fill_ans = function() {
   for (i = 0; isless(i, maxatoms); i++) {
@@ -580,12 +578,10 @@ function createSelectDropdown() {
     }
   
 var selectTag = createSelectDropdown();
-console.log(selectTag);
 var select = board.create('text', [-3, 4, selectTag], { fixed: true, fontsize:fontsize });
 select.setAttribute({ visible: true });
 board.update();
 var dropdown = document.getElementById("inp"+uid);
-console.log(dropdown);
 //mouse button event
 p.forEach(function(el, i, p) {
   el.on('up', function(e) {
@@ -623,7 +619,7 @@ document.getElementById(flagsid).addEventListener('change' ,flagdeserialiser);
 function flagdeserialiser() {
 if  ( ! (answered)) try{
 	
-  
+  console.log(flagsid);
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
