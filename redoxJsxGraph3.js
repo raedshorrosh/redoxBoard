@@ -1,3 +1,4 @@
+/*  */
 [[jsxgraph  width="800px" height="400px" input-ref-states='statesRef' input-ref-positions='positionsRef'  input-ref-oxidation_maps='oxmapsRef' input-ref-reduction_maps='redmapsRef' input-ref-answers='flagsid' ]]
   function isless(x,y) {return (x<y)};
   function iand(x,y)  {return (x&&y)};
@@ -507,9 +508,10 @@ ap11.on('drag', function(e, i) {
         let temp = JSON.parse(oxInput.value);
         temp[0] = j + 1;
         oxInput.value = JSON.stringify(temp);
-
+        oxInput.dispatchEvent(new Event('change'));
       } else {
-        oxInput.value = JSON.stringify([j + 1])
+        oxInput.value = JSON.stringify([j + 1]);
+        oxInput.dispatchEvent(new Event('change'));	      
       }
  break;
     }
