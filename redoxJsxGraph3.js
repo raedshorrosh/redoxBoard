@@ -616,7 +616,8 @@ p.forEach(function(el, i, p) {
 
  //===================
 checkAnswers.addEventListener('change' ,flagdeserialiser);
-function flagdeserialiser() {
+function flagdeserialiser(event) {
+event.stopPropagation();
 if  ( !(answered)) try{
 	
   console.log(checkAnswers.value,answered);
