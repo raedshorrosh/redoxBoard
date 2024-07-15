@@ -616,9 +616,9 @@ p.forEach(function(el, i, p) {
  //===================
 document.getElementById(flagsid).addEventListener('change' ,flagdeserialiser);
 function flagdeserialiser() {
-if  ( ! (answered)) try{
+if  ( !(answered)) try{
 	
-  console.log(flagsid);
+  console.log(flagsid.value,answered);
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
