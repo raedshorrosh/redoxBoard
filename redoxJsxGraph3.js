@@ -61,6 +61,7 @@ var positionsInput = document.getElementById(positionsRef);
 var stateInput = document.getElementById(statesRef);
 var oxInput= document.getElementById(oxmapsRef);
 var redInput= document.getElementById(redmapsRef);
+var checkAnswers=document.getElementById(flagsid);
 if (design!=1) {positionsInput.value=JSON.stringify(positions);
 		 positionsInput.dispatchEvent(new Event('change'));
 	       };
@@ -614,11 +615,11 @@ p.forEach(function(el, i, p) {
 });
 
  //===================
-document.getElementById(flagsid).addEventListener('change' ,flagdeserialiser);
+checkAnswers.addEventListener('change' ,flagdeserialiser);
 function flagdeserialiser() {
 if  ( !(answered)) try{
 	
-  console.log(flagsid.value,answered);
+  console.log(checkAnswers.value,answered);
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
