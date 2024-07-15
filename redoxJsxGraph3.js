@@ -616,11 +616,11 @@ p.forEach(function(el, i, p) {
 
  //===================
 checkAnswers.addEventListener('change' ,flagdeserialiser);
+console.log('i am outised', checkAnswers.value);
 function flagdeserialiser(event) {
-event.stopPropagation();
 if  ( !(answered)) try{
 	
-  console.log(checkAnswers.value,answered);
+  console.log(checkAnswers.value,'i am inside',answered);
  answered=true;
 
   if (iand((inter1.Y()!=0),(inter2.Y()!=0)))
