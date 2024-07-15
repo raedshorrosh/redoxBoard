@@ -615,8 +615,7 @@ p.forEach(function(el, i, p) {
 });
 
  //===================
-checkAnswers.addEventListener('change' ,flagdeserialiser);
-console.log('i am outised', checkAnswers.value);
+
 function flagdeserialiser(event) {
 if  ( !(answered)) try{
 	
@@ -647,7 +646,8 @@ if  ( !(answered)) try{
  }
    }
 	catch(err) { }
-} 
+}; 
+checkAnswers.addEventListener('change' ,flagdeserialiser);
 
  
 
