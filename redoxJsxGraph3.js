@@ -647,7 +647,15 @@ if  ( !(answered)) try{
    }
 	catch(err) { }
 }; 
-checkAnswers.addEventListener('change' ,flagdeserialiser);
+//checkAnswers.addEventListener('change' ,flagdeserialiser);
+stack_js.get_content('doit').then((content) => {
+
+if (content !== null) {
+// As the content is not null this means the span is present so feedback is displayed and we can react to it here
+flagdeserialiser();
+}
+
+});
 
  
 
