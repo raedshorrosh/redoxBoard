@@ -647,7 +647,7 @@ if  ( !(answered)) {
      { p[i].name='<span style="font-size: 1em; color: red;">'+p[i].name+' ❌</span>';  board.update();
      }
   }
-}});
+}}});
 
  
 
