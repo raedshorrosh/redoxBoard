@@ -618,7 +618,7 @@ p.forEach(function(el, i, p) {
 
 
 
-stack_js.get_content('doit'+rqm).then((content) => {
+stack_js.get_content(rqm).then((content) => {
 if (content !== null) {
 // As the content is not null this means the span is present so feedback is displayed and we can react to it here
  
