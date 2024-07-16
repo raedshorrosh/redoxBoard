@@ -616,8 +616,13 @@ p.forEach(function(el, i, p) {
 
  //===================
 
-function flagdeserialiser(event) {
-if  ( !(answered)) try{
+
+
+stack_js.get_content('doit').then((content) => {
+if (content !== null) {
+// As the content is not null this means the span is present so feedback is displayed and we can react to it here
+ 
+if  ( !(answered)) {
 	
  answered=true;
 
@@ -637,25 +642,12 @@ if  ( !(answered)) try{
   board.update();
   for (i = 0; isless(i,maxatoms); i++){
   if (parseFloat(p[i].name)==parseFloat(oxid_ans[i])) {
-  p[i].name='<span style="font-size: 1em; color: green;">'+p[i].name+' ✔</span>';   board.update();}
+      p[i].name='<span style="font-size: 1em; color: green;">'+p[i].name+' ✔</span>';   board.update();}
   else 
- { p[i].name='<span style="font-size: 1em; color: red;">'+p[i].name+' ❌</span>';  board.update();
- }
-  
- }
-   }
-	catch(err) { }
-}; 
-//checkAnswers.addEventListener('change' ,flagdeserialiser);
-stack_js.get_content('doit').then((content) => {
-if (content !== null) {
-var cont= JSON.parse(content) 	;
-console.log(cont,' ',cont[0],'  ',cont[1]);	
-// As the content is not null this means the span is present so feedback is displayed and we can react to it here
-flagdeserialiser();
-}
-
-});
+     { p[i].name='<span style="font-size: 1em; color: red;">'+p[i].name+' ❌</span>';  board.update();
+     }
+  }
+}});
 
  
 
