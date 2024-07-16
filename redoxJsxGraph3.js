@@ -617,6 +617,8 @@ p.forEach(function(el, i, p) {
  //===================
 
 function flagdeserialiser(event) {
+console.log('are we here?');	
+
 if  ( !(answered)) try{
 	
   console.log(checkAnswers.value,'i am inside',answered);
@@ -653,7 +655,6 @@ stack_js.get_content('doit').then((content) => {
 if (content !== null) {
 // As the content is not null this means the span is present so feedback is displayed and we can react to it here
 flagdeserialiser();
-console.log('are we here?');	
 }
 
 });
