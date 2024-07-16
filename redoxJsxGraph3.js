@@ -648,8 +648,9 @@ if  ( !(answered)) try{
 }; 
 //checkAnswers.addEventListener('change' ,flagdeserialiser);
 stack_js.get_content('doit').then((content) => {
-console.log(content,' ',content[0],'  ',content[1]);	
 if (content !== null) {
+var cont= JSON.parse(content) 	;
+console.log(cont,' ',cont[0],'  ',cont[1]);	
 // As the content is not null this means the span is present so feedback is displayed and we can react to it here
 flagdeserialiser();
 }
